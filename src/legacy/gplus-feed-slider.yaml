@@ -1,0 +1,203 @@
+########################################################
+#                                                      #
+#   Google+ Feed Slider - Particle for Gantry          #
+#                                                      #
+#   Purpose: This project implements a basic           #
+#            feed slider that fetches data from        #
+#            an existing Google+ profile. The          #
+#            appearance as well as the data output     #
+#            can be configured via the Gantry          #
+#            templating framework.                     #
+#                                                      #
+#   Author: Andreas Kar (thex) <andreas.kar@gmx.at>    #
+#                                                      #
+########################################################
+
+name: Google+ Feed Slider
+description: Configure Google+ Feed Slider Particle.
+type: particle
+icon: fa-google-plus-square
+
+form:
+  fields:
+    enabled:
+      type: input.checkbox
+      label: Enabled
+      description: Globally enable the Google+ Feed Slider Particle.
+      default: true
+
+    tabs:
+      type: container.tabs
+      fields:
+        tab_general:
+            label: General
+            fields:
+                general.id:
+                  type: input.text
+                  label: Container ID
+                  description: This is the unique identifier applied to each particle container. Change this value in case you want to use the particle multiple times per page.
+                  placeholder: 1
+                  default: 1
+                  
+                general.info:
+                  type: separator.note
+                  class: alert alert-info
+                  content: Please be aware that the API Key can always be seen by everyone so you have to restrict the access to both your domain and product (Google+ only) in the Google API Console.
+
+                general.api_key:
+                  type: input.text
+                  label: API Key
+                  description: The Google+ API Key you got from the Google API Console. Please be aware that it can always be seen by everyone so you have to restrict the access to both your domain and products (Google+ only). Please create an explicit key for this use case and restrict it appropriately.
+                  placeholder: Your API Key from Google.
+                  default: 
+
+                general.profile:
+                  type: input.text
+                  label: Profile Identifier
+                  description: The identifier of the profile from where the posts should be fetched. Starting with a '+'.
+                  placeholder: +LarryPage
+                  default: +LarryPage
+                  
+                general.max_results:
+                  type: input.text
+                  label: Max Results
+                  description: The number of posts fetched from the Google API for the selected profile. The limit is 100 posts.
+                  placeholder: 20
+                  default: 20 
+        
+                general.collection:
+                  type: input.text
+                  label: Collection
+                  description: The collection string used in the API URL. Typically 'public' should be the standard identifier.
+                  placeholder: public
+                  default: public
+
+        tab_text:
+            label: Text
+            fields:
+                general.enable_link:
+                  type: input.checkbox
+                  label: Enable Link
+                  description: Define whether the title link should be displayed or not.
+                  default: true
+
+                general.empty_results:
+                  type: input.checkbox
+                  label: Display Empty Title
+                  description: Define whether to display posts with an empty title or not.
+                  default: false
+
+                general.empty_title:
+                  type: input.text
+                  label: Empty Title Text
+                  description: The text that appears if a post with an empty title is displayed.
+                  placeholder: go to post
+                  default: go to post
+
+                general.loading_text:
+                  type: input.text
+                  label: Loading Text
+                  description: The text that appears while the Google+ feed is loaded.
+                  placeholder: The Google+ feed loads, please be patient...
+                  default: The Google+ feed loads, please be patient... 
+
+        tab_image:
+            label: Image
+            fields:
+                general.image.enable:
+                  type: input.checkbox
+                  label: Enable Profile Image
+                  description: Set this checkbox to show the profile image together with the post title.
+                  default: true
+
+                general.image.size:
+                  type: input.text
+                  label: Image Size
+                  description: Set the size of the profile image which should be loaded from the Google API.
+                  placeholder: use 25, 50 or any other size (without px)
+                  default: 25
+
+                general.image.design:
+                  type: select.select
+                  label: Image Design
+                  description: Select the design you want to use for the profile image.
+                  default: 1
+                  options:
+                    1: Square
+                    2: Round
+
+        tab_date:
+            label: Date
+            fields:   
+                general.date.mode:
+                  type: select.select
+                  label: Date Mode
+                  description: The date mode applied to a feed slide.
+                  default: 3
+                  options:
+                    1: Date Only
+                    2: Time Only
+                    3: Date and Time
+                    4: Disabled
+
+                general.date.format:
+                  type: select.select
+                  label: Date Format
+                  description: The date format used for the date.
+                  default: 2
+                  options:
+                    1: DD MM YYYY
+                    2: YYYY MM DD
+                    3: MM DD YYYY
+
+                general.date.date_delimiter:
+                  type: input.text
+                  label: Date Delimiter
+                  description: The delimiter used within the date.
+                  placeholder: "/"
+                  default: "/"
+
+                general.date.time_delimiter:
+                  type: input.text
+                  label: Time Delimiter
+                  description: The delimiter between date and time.
+                  placeholder: " -"
+                  default: " -"
+                
+        tab_js:
+            label: Javascript
+            fields:
+                js.placement:
+                  type: select.select
+                  label: JS Placement
+                  description: Placement of the JS.
+                  default: head
+                  options:
+                    head: Header
+                    footer: Footer
+
+                js.priority:
+                  type: input.text
+                  label: JS Priority
+                  description: The priority of the JS.
+                  placeholder: -10 ... 10
+                  default: 0
+
+                js.path:
+                  type: input.text
+                  label: JS Path
+                  description: Path to the Atom JS file either on this server (relative from template/custom) or on a different server (absolute).
+                  placeholder: path/to/JS
+                  default: js/gplus-feed-slider.js
+
+                js.execution:
+                  type: select.select
+                  label: JS Execution
+                  description: The used execution method for the loaded JS.
+                  placeholder: 'Select...'
+                  default: none
+                  options:
+                      none: None
+                      async: Asynchronous
+                      defer: Deferred
+                      both: Both

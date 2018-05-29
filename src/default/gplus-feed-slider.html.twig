@@ -1,0 +1,103 @@
+{#######################################################}
+{#                                                     #}
+{#   Google+ Feed Slider - Particle for Gantry         #}
+{#                                                     #}
+{#   Purpose: This project implements a basic          #}
+{#            feed slider that fetches data from       #}
+{#            an existing Google+ profile. The         #}
+{#            appearance as well as the data output    #}
+{#            can be configured via the Gantry         #}
+{#            templating framework.                    #}
+{#                                                     #}
+{#   Author: Andreas Kar (thex) <andreas.kar@gmx.at>   #}
+{#                                                     #}
+{#######################################################}
+
+
+{% extends '@nucleus/partials/particle.html.twig' %}
+
+{% set scriptType = 'text/javascript' %}
+
+{% set jsPlace = particle.js.placement|default('head') %}
+{% set jsPath = 'gantry-theme://' ~ particle.js.path|default('js/gplus-feed-slider.js') %}
+{% set jsPrior = particle.js.priority|default(0) %}
+{% set jsExec = '' %}
+
+{% if particle.js.execution == 'defer' or particle.js.execution == 'both' %}
+    {% set jsExec = 'defer="defer"' %}
+{% endif %}
+
+{% if particle.js.execution == 'both' %}
+    {% set jsExec = jsExec ~ ' ' %}
+{% endif %}
+
+{% if particle.js.execution == 'async' or particle.js.execution == 'both' %}
+    {% set jsExec = jsExec ~ 'async="async"' %}
+{% endif %}
+
+{% if jsExec is not empty %}
+    {% set jsExec = ' ' ~ jsExec %}
+{% endif %}
+
+{% set general = particle.general %}
+
+{% set slider_id = general.id|default("1") %}
+{% set api_key = general.api_key|default("") %}
+{% set profile = general.profile|default("+LarryPage") %}
+{% set collection = general.collection|default("public") %}
+{% set max_results = general.max_results|default(20) %}
+
+{% set enable_link = general.enable_link|default(true) %}
+{% set filter_empty = general.empty_results|default(false) %}
+{% set empty_title = general.empty_title|default("go to post") %}
+{% set loading_text = general.loading_text|default("The Google+ feed loads, please be patient...") %}
+
+{% set image_enable = general.image.enable|default(true) %}
+{% set image_type = general.image.design|default(1) %}
+{% set image_size = general.image.size|default(25) %}
+
+{% set date_mode = general.date.mode|default(3) %}
+{% set date_format = general.date.format|default(2) %}
+{% set date_delimiter = general.date.date_delimiter|default("/") %}
+{% set time_delimiter = general.date.time_delimiter|default(" -") %}
+
+{%- block particle -%}
+    <div class="g-google-plus-slider slider-{{slider_id}}{{cClass|e}}"{{cAttrs|raw}}>
+        <div class="main-container">
+            <span class="content-container">
+                <span class="slide-element slide-on">
+                    <span>{{loading_text}}</span>
+                </span>
+            </span>
+            <span class="scroll-contrainer">
+                <a class="scroll-left" href="#">&lt;</a>
+                <a class="scroll-right" href="#">&gt;</a>
+            </span>
+        </div>  
+    </div>
+    {%- scripts in jsPlace with { priority: jsPrior } -%}
+        <script type="{{scriptType}}" src="{{url(jsPath)}}"{{jsExec}}></script>
+        <script>
+            jQuery(window).load(function () {
+                var gfs = new GPlusFeedSilder();
+                gfs.data = {key: "{{ api_key|e("js") }}", 
+                            profile: "{{ profile|e("js") }}", 
+                            collection: "{{ collection|e("js") }}", 
+                            maxResults: {{ max_results }},
+                            container_id: "{{ slider_id|e("js") }}",
+                            date_mode: {{ date_mode }},
+                            date_format: {{ date_format }},
+                            date_delimiter: "{{ date_delimiter|e("js") }}",
+                            time_delimiter: "{{ time_delimiter|e("js") }}",
+                            link: {{ enable_link }},
+                            filter_empty: {{ filter_empty }},
+                            empty_title: "{{ empty_title|e("js") }}",
+                            enable_image: {{ image_enable }},
+                            image_type: {{ image_type }},
+                            image_size: {{ image_size }}};
+                
+                gfs.addLoadFeedEvent();
+            });
+        </script>
+    {%- endscripts -%}
+{%- endblock -%}

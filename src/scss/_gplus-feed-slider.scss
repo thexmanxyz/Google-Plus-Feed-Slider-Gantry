@@ -1,0 +1,96 @@
+/*******************************************************
+*                                                      *
+*   Google+ Feed Slider - Particle for Gantry          *
+*                                                      *
+*   Purpose: This project implements a basic           *
+*            feed slider that fetches data from        *
+*            an existing Google+ profile. The          *
+*            appearance as well as the data output     *
+*            can be configured via the Gantry          *
+*            templating framework.                     *
+*                                                      *
+*   Author: Andreas Kar (thex) <andreas.kar@gmx.at>    *
+*                                                      *
+*******************************************************/
+
+.g-google-plus-slider{
+    .main-container{
+        padding-left: 0 1.5rem;
+        display: inline-block;
+        width: 100%;
+        min-height: 40px;
+    }
+    
+    .content-container{
+        display: inline-block;
+        margin-top: 0.25rem;
+        width: calc(100% - 100px);
+    }
+    
+    .loading-msg{
+        margin-top: 7px;
+    }
+    
+    .scroll-contrainer{
+        width: 100px;
+        padding-bottom: 10px;
+        vertical-align: middle;
+        padding-bottom: 12px;
+    }
+    
+    .scroll-left,
+    .scroll-right{
+        font-size: 18px;
+        background-color: #eee;
+        margin-left: 0.5rem;
+        display: inline-block;
+        margin-bottom: 8px;
+        padding: 0 0.75rem 0.1875rem 0.75rem;
+        color: #333;
+        border: 1px solid #666;
+    }
+    
+    .scroll-right{
+        margin-left: 0.125rem;
+    }
+    
+    .slide-element{
+        .slide-image-container{}
+        .slide-person-image{ margin: 0 0 0.5rem 0.75rem; }
+        .slide-image-mode-1{}
+        .slide-image-mode-2{ border-radius: 50%; }
+        .slide-date{}
+    }
+    
+    .slide-on{
+        display:inherit;
+    }
+    
+    .slide-off{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 47.938rem) {
+    .g-google-plus-slider{
+        .content-container{
+            width: 100%;
+        }
+        .scroll-contrainer{
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .slide-element{
+            .slide-image-container{
+                display: inline-block;
+                width: 100%;
+            }
+
+            .slide-person-image{
+                margin: 0.25rem 0 0 0.125rem;
+            }
+        }
+    }
+}
