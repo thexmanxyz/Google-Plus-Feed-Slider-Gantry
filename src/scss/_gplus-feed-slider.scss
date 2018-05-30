@@ -28,28 +28,50 @@
     }
     
     .loading-msg{
-        margin-top: 7px;
+        margin-top: 0.4375rem;
     }
     
     .scroll-contrainer{
         width: 100px;
-        padding-bottom: 10px;
+        padding-bottom: 0.625rem;
         vertical-align: middle;
-        padding-bottom: 12px;
+        padding-bottom: 0.75rem;
     }
     
     .scroll-left,
     .scroll-right{
-        font-size: 18px;
-        background-color: #eee;
+        font-size: 1.125rem;
         margin-left: 0.5rem;
         display: inline-block;
         margin-bottom: 8px;
-        padding: 0 0.75rem 0.1875rem 0.75rem;
-        color: #333;
-        border: 1px solid #666;
+        padding: 0 0.8125rem 0.1875rem 0.75rem;
+        border-radius: 5px;
+        text-shadow: none;
     }
     
+    .scroll-light{
+        color: #888;
+        border: 1px solid #888;
+    }
+    
+    .scroll-light:hover{
+        color: #333;
+        border: 1px solid #333;
+    }
+    
+    .scroll-dark{
+        color: #888;
+        border: 1px solid #888;
+    }
+    
+    .scroll-dark:hover{
+        color: #BBB;
+        border: 1px solid #BBB;
+    }
+    
+    .scroll-left{
+        margin-right: 0.125rem;
+    }
     .scroll-right{
         margin-left: 0.125rem;
     }
@@ -60,6 +82,12 @@
         .slide-image-mode-1{}
         .slide-image-mode-2{ border-radius: 50%; }
         .slide-date{}
+        
+        .slide-plus-one,
+        .slide-display-name{ 
+            margin-left: 0.225rem;
+            font-size: 0.8rem;
+        }
     }
     
     .slide-on{

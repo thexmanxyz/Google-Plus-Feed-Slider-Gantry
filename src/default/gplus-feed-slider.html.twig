@@ -16,13 +16,45 @@
 
 {% extends '@nucleus/partials/particle.html.twig' %}
 
-{% set scriptType = 'text/javascript' %}
+{% set general = particle.general %}
 
+{% set slider_id = general.id|default("1") %}
+{% set api_key = general.api_key|default("") %}
+{% set profile = general.profile|default("+LarryPage") %}
+{% set collection = general.collection|default("public") %}
+{% set max_results = general.max_results|default(20) %}
+
+{% set slider_auto = general.slider.auto|default(true) %}
+{% set slider_delay = general.slider.delay|default(5000) %}
+{% set slider_mode = general.slider.mode|default(1) %}
+{% set slider_btn_color = general.slider.button_color|default(1) %}
+{% set slider_btn_class = " " ~ (slider_btn_color == 1 ? "scroll-light" : "scroll-dark") %}
+
+{% set link_enable = general.link_enable|default(true) %}
+{% set link_title = general.link_title|default("Link to Google+ Post") %}
+{% set filter_empty = general.filter_empty|default(false) %}
+{% set empty_title = general.empty_title|default("go to post") %}
+{% set loading_text = general.loading_text|default("The Google+ feed is loading, please be patient...") %}
+
+{% set display_name = general.post.display_name|default(false) %}
+{% set plus_one = general.post.plus_one|default(true) %}
+{% set slide_count = general.post.slide_count|default(false) %}
+
+{% set image_enable = general.image.enable|default(true) %}
+{% set image_design = general.image.design|default(1) %}
+{% set image_size = general.image.size|default(25) %}
+{% set image_alt = general.image.alt|default("Google Plus Profile") %}
+
+{% set date_mode = general.date.mode|default(3) %}
+{% set date_format = general.date.format|default(2) %}
+{% set date_delimiter = general.date.date_delimiter|default("/") %}
+{% set time_delimiter = general.date.time_delimiter|default("") %}
 {% set jsPlace = particle.js.placement|default('head') %}
 {% set jsPath = 'gantry-theme://' ~ particle.js.path|default('js/gplus-feed-slider.js') %}
 {% set jsPrior = particle.js.priority|default(0) %}
 {% set jsExec = '' %}
 
+{% set scriptType = 'text/javascript' %}
 {% if particle.js.execution == 'defer' or particle.js.execution == 'both' %}
     {% set jsExec = 'defer="defer"' %}
 {% endif %}
@@ -39,28 +71,6 @@
     {% set jsExec = ' ' ~ jsExec %}
 {% endif %}
 
-{% set general = particle.general %}
-
-{% set slider_id = general.id|default("1") %}
-{% set api_key = general.api_key|default("") %}
-{% set profile = general.profile|default("+LarryPage") %}
-{% set collection = general.collection|default("public") %}
-{% set max_results = general.max_results|default(20) %}
-
-{% set enable_link = general.enable_link|default(true) %}
-{% set filter_empty = general.empty_results|default(false) %}
-{% set empty_title = general.empty_title|default("go to post") %}
-{% set loading_text = general.loading_text|default("The Google+ feed loads, please be patient...") %}
-
-{% set image_enable = general.image.enable|default(true) %}
-{% set image_type = general.image.design|default(1) %}
-{% set image_size = general.image.size|default(25) %}
-
-{% set date_mode = general.date.mode|default(3) %}
-{% set date_format = general.date.format|default(2) %}
-{% set date_delimiter = general.date.date_delimiter|default("/") %}
-{% set time_delimiter = general.date.time_delimiter|default(" -") %}
-
 {%- block particle -%}
     <div class="g-google-plus-slider slider-{{slider_id}}{{cClass|e}}"{{cAttrs|raw}}>
         <div class="main-container">
@@ -70,8 +80,8 @@
                 </span>
             </span>
             <span class="scroll-contrainer">
-                <a class="scroll-left" href="#">&lt;</a>
-                <a class="scroll-right" href="#">&gt;</a>
+                <a class="scroll-left{{slider_btn_class}}" href="#">&lt;</a>
+                <a class="scroll-right{{slider_btn_class}}" href="#">&gt;</a>
             </span>
         </div>  
     </div>
@@ -80,24 +90,39 @@
         <script>
             jQuery(window).load(function () {
                 var gfs = new GPlusFeedSilder();
-                gfs.data = {key: "{{ api_key|e("js") }}", 
-                            profile: "{{ profile|e("js") }}", 
-                            collection: "{{ collection|e("js") }}", 
-                            maxResults: {{ max_results }},
-                            container_id: "{{ slider_id|e("js") }}",
-                            date_mode: {{ date_mode }},
-                            date_format: {{ date_format }},
-                            date_delimiter: "{{ date_delimiter|e("js") }}",
-                            time_delimiter: "{{ time_delimiter|e("js") }}",
-                            link: {{ enable_link }},
-                            filter_empty: {{ filter_empty }},
-                            empty_title: "{{ empty_title|e("js") }}",
-                            enable_image: {{ image_enable }},
-                            image_type: {{ image_type }},
-                            image_size: {{ image_size }}};
+                
+                gfs.cfg = {container_id: "{{ slider_id|e("js") }}",
+                           api_key: "{{ api_key|e("js") }}", 
+                           profile: "{{ profile|e("js") }}", 
+                           collection: "{{ collection|e("js") }}", 
+                           maxResults: {{ max_results }},
+                            
+                           link_enable: {{ _self.boolToInt(link_enable) }},
+                           link_title: "{{ link_title|e("js") }}" ,
+                           filter_empty: {{ _self.boolToInt(filter_empty) }},
+                           empty_title: "{{ empty_title|e("js") }}",
+                           
+                           display_name: {{ _self.boolToInt(display_name) }},
+                           plus_one: {{ _self.boolToInt(plus_one) }},
+                           slide_count: {{ _self.boolToInt(slide_count) }},
+                           
+                           slider_auto: {{ _self.boolToInt(slider_auto) }},
+                           slider_delay: {{ slider_delay }},
+                           slider_mode: {{ slider_mode }},
+
+                           image_enable: {{ _self.boolToInt(image_enable) }},
+                           image_design: {{ image_design }},
+                           image_size: {{ image_size }},
+                           image_alt: "{{ image_alt|e("js") }}",
+                                            
+                           date_mode: {{ date_mode }},
+                           date_format: {{ date_format }},
+                           date_delimiter: "{{ date_delimiter|e("js") }}",
+                           time_delimiter: "{{ time_delimiter|e("js") }}"};
                 
                 gfs.addLoadFeedEvent();
             });
         </script>
     {%- endscripts -%}
 {%- endblock -%}
+{% macro boolToInt(bVal) %}{{bVal ? '1' : '0'}}{% endmacro %}

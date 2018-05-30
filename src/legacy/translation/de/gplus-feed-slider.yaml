@@ -72,20 +72,61 @@ form:
                   placeholder: public
                   default: public
 
+        tab_slider:
+            label: Slider
+            fields:
+                general.slider.auto:
+                  type: input.checkbox
+                  label: Auto Slide
+                  description: Define whether the slider should automatically rotate through the posts.
+                  default: true
+        
+                general.slider.delay:
+                  type: input.text
+                  label: Delay
+                  description: The delay between two slides in milliseconds if 'Auto Slide' was enabled.
+                  placeholder: 5000
+                  default: 5000
+
+                general.slider.mode:
+                  type: select.select
+                  label: Mode
+                  description: Select the mode for the 'Auto Slide' behaviour. Either scrolling right or left through the slides.
+                  default: 1
+                  options:
+                    1: Right Scroll
+                    2: Left Scroll
+
+                general.slider.button_color:
+                  type: select.select
+                  label: Button Color
+                  description: Select the button color mode which fits best your background. Dark for darker background colors, light for lighter background color.
+                  default: 1
+                  options:
+                    1: Light
+                    2: Dark
+
         tab_text:
             label: Text
             fields:
-                general.enable_link:
+                general.link_enable:
                   type: input.checkbox
                   label: Enable Link
                   description: Define whether the title link should be displayed or not.
                   default: true
 
-                general.empty_results:
+                general.link_title:
+                  type: input.text
+                  label: Link Title
+                  description: The text applied to the link 'title=' attribute.
+                  placeholder: Link to Google+ Post
+                  default: Link to Google+ Post
+
+                general.filter_empty:
                   type: input.checkbox
-                  label: Display Empty Title
+                  label: Filter Empty Title
                   description: Define whether to display posts with an empty title or not.
-                  default: false
+                  default: true
 
                 general.empty_title:
                   type: input.text
@@ -97,9 +138,30 @@ form:
                 general.loading_text:
                   type: input.text
                   label: Loading Text
-                  description: The text that appears while the Google+ feed is loaded.
-                  placeholder: The Google+ feed loads, please be patient...
-                  default: The Google+ feed loads, please be patient... 
+                  description: The text that appears while the Google+ feed is loading.
+                  placeholder: The Google+ feed is loading, please be patient...
+                  default: The Google+ feed is loading, please be patient... 
+
+        tab_post:
+            label: Post
+            fields:
+                general.post.display_name:
+                  type: input.checkbox
+                  label: Enable Display Name
+                  description: Defines whether the users name will be displayed.
+                  default: false
+
+                general.post.plus_one:
+                  type: input.checkbox
+                  label: Enable Plus Ones
+                  description: Defines whether the +1 counter will be displayed.
+                  default: true
+
+                general.post.slide_count:
+                  type: input.checkbox
+                  label: Enable Slide Count
+                  description: Defines whether the current slide count will be shown in front of the title text.
+                  default: false
 
         tab_image:
             label: Image
@@ -113,7 +175,7 @@ form:
                 general.image.size:
                   type: input.text
                   label: Image Size
-                  description: Set the size of the profile image which should be loaded from the Google API.
+                  description: Set the size of the profile image which should be loaded from the Google API. Set this to either 25 or 50 for a good appearance.
                   placeholder: use 25, 50 or any other size (without px)
                   default: 25
 
@@ -125,6 +187,13 @@ form:
                   options:
                     1: Square
                     2: Round
+
+                general.image.alt:
+                  type: input.text
+                  label: Alt Text
+                  description: The text applied to the image 'alt=' attribute.
+                  placeholder: Google Plus Profile
+                  default: Google Plus Profile
 
         tab_date:
             label: Date

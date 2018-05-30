@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="file" method="upgrade" version="3.0">
+    <name>Google+ Feed Slider - Gantry Particle (Helium)</name>
+    <version>1.0.0</version>
+    <creationDate>30.05.2018</creationDate>
+    <author>Andreas Kar</author>
+    <authorEmail>andreas.kar@gmx.at</authorEmail>
+    <authorUrl></authorUrl>
+    <copyright>© 2018 Andreas Kar</copyright>
+    <license>MIT - see LICENSE.pdf</license>
+    <description>
+        <![CDATA[<div class="alert alert-info" role="alert"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <h3>Google+ Feed Slider - Particle for Gantry Framework</h3>
+        <span aria-hidden="true" class="icon-user"></span>&nbsp;<em>Andreas Kar (andreas.kar@gmx.at)</em>
+        <p><b>NOTE</b>:&nbsp;This particle is installed for the Gantry Helium.<br />If you want to install the particle on a different Gantry template, you must manually copy the two files <code>gplus-feed-slider.yaml</code> and <code>gplus-feed-slider.html.twig</code> to <code>/templates/[TEMPLATE]/custom/particles</code>.<br>Moreover, you have to copy <code>_gplus-feed-slider.scss</code> to <code>/templates/[TEMPLATE]/custom/scss</code> and <code>gplus-feed-slider.js</code> to <code>/templates/[TEMPLATE]/custom/js</code>.</p></div>]]>
+    </description>
+    <fileset>
+        <files folder="particles" target="templates/g5_helium/custom/particles">
+            <filename>gplus-feed-slider.html.twig</filename>
+            <filename>gplus-feed-slider.yaml</filename>
+        </files>
+        <files folder="scss" target="templates/g5_helium/custom/scss">
+            <filename>_gplus-feed-slider.scss</filename>
+        </files>
+        <files folder="js" target="templates/g5_helium/custom/js">
+            <filename>gplus-feed-slider.js</filename>
+        </files>
+    </fileset>
+</extension>
