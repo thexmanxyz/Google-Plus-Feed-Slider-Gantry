@@ -18,10 +18,10 @@ ___
 [English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.particle.only.legacy.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.particle.only.legacy.DE.v1.0.0.zip)
 
 **Joomla Plugin - Hydrogen:**
-[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/lih.j3.hydrogen.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/lih.j3.hydrogen.DE.v1.0.0.zip)
+[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.hydrogen.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.hydrogen.DE.v1.0.0.zip)
 
 **Joomla Plugin - Helium:**
-[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/lih.j3.helium.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/lih.j3.helium.DE.v1.0.0.zip)
+[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.helium.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.helium.DE.v1.0.0.zip)
 ___
 
 ## Automatic Installation (Joomla only)
