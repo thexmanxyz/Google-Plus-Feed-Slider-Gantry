@@ -162,13 +162,13 @@ function GPlusFeedSilder(){
         var xhttp = new XMLHttpRequest();  
         xhttp.open("GET", this.getAccessUrl(), true);
         xhttp.setRequestHeader("Content-type", "application/json");
-        xhttp.onload = this.getFeedLoadEvent(this);
+        xhttp.onload = this.getFeedLoadEvent(this, xhttp);
         xhttp.send(null);         
     };
 
     this.getFeedLoadEvent = function(gfs) {
         return function(){
-
+            
             //selectors
             var sel = {slider: ".g-google-plus-slider.slider-" + gfs.cfg.container_id,
                        content: ".content-container",
@@ -176,11 +176,18 @@ function GPlusFeedSilder(){
                        left: ".scroll-left",
                        right: ".scroll-right"};
 
-            var json = JSON.parse(this.responseText);
             var $slider = jQuery(sel.slider);
             var slides = [];
             var html = "";
             var count = 1;
+            var json;
+            
+            if(this.status >= 400){
+                $slider.find(sel.element + " > span").html("Server / Configuration Error - Check API Key!");
+                return;
+            }
+            
+            json = JSON.parse(this.responseText);
 
             //build slides
             for(var i=0; i < Object.keys(json.items).length; i++){

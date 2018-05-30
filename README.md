@@ -9,19 +9,19 @@ This projects implements a feed slider that fetches post data from an existing G
 * Gantry Templating Framework and Theme
 
 ## Download
-Choose the correct download for your target platform. Joomla Plugin System supported for the Gantry themes - Helium and Hydrogen. The latest Particle version is **v1.0.0**.
+Choose the correct download for your target platform. Joomla Plugin System supported for the Gantry themes - Helium and Hydrogen. The latest Particle version is **v1.0.1**.
 ___
 **Default Particle:**
-[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.particle.only.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.particle.only.DE.v1.0.0.zip)
+[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.particle.only.EN.v1.0.1.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.particle.only.DE.v1.0.1.zip)
 
 **Legacy Particle - Gantry <5.3.2:**
-[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.particle.only.legacy.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.particle.only.legacy.DE.v1.0.0.zip)
+[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.particle.only.legacy.EN.v1.0.1.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.particle.only.legacy.DE.v1.0.1.zip)
 
 **Joomla Plugin - Hydrogen:**
-[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.hydrogen.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.hydrogen.DE.v1.0.0.zip)
+[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.j3.hydrogen.EN.v1.0.1.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.j3.hydrogen.DE.v1.0.1.zip)
 
 **Joomla Plugin - Helium:**
-[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.helium.EN.v1.0.0.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.0/gfs.j3.helium.DE.v1.0.0.zip)
+[English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.j3.helium.EN.v1.0.1.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.1/gfs.j3.helium.DE.v1.0.1.zip)
 ___
 
 ## Automatic Installation (Joomla only)

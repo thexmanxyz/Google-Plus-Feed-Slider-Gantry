@@ -20,7 +20,7 @@ set scr_log_files=0
 
 REM --- Project Variables ---
 set prj_id=gfs
-set prj_rev=v1.0.0
+set prj_rev=v1.0.1
 set prj_name=gplus-feed-slider
 set prj_fullname=Google Plus Feed Slider - Particle
 set prj_title_hr=------------------------------------
