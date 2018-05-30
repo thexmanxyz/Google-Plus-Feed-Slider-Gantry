@@ -16,6 +16,21 @@
 
 {% extends '@nucleus/partials/particle.html.twig' %}
 
+{% set cAttrs = '' %}
+{% if particle.tag.attributes %}
+    {% for attr in particle.tag.attributes %}
+        {% for key, value in attr %}
+            {% set cAttrs = cAttrs ~ ' ' ~ key|e ~ '="' ~ value|e('html_attr') ~ '"' %}
+        {% endfor %}
+    {% endfor %}
+{% endif %}
+
+{% if particle.css.class %}
+    {% set cClass = ' ' ~ particle.css.class %}
+{% else %}
+    {% set cClass = '' %}
+{% endif %}
+
 {% set general = particle.general %}
 
 {% set slider_id = general.id|default("1") %}

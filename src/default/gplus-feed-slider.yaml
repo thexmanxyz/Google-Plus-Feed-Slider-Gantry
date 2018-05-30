@@ -32,6 +32,20 @@ form:
         tab_general:
             label: General
             fields:
+                tag.attributes:
+                  type: collection.keyvalue
+                  label: Tag Attributes
+                  description: Additional attributes for the HTML container.
+                  key_placeholder: Key (e.g. style, name, ...)
+                  value_placeholder: Value
+                  exclude: ['id', 'class']
+
+                css.class:
+                  type: input.selectize
+                  label: CSS Classes
+                  description: Set a specific CSS class on the HTML container for custom styling.
+                  default:
+
                 general.id:
                   type: input.text
                   label: Container ID

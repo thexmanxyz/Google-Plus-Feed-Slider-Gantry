@@ -62,8 +62,33 @@ Please be aware that the template folder path varies in dependence of the used C
  
 ## Supported Parameters and Particle Options
 * Container Attributes
-* Custom CSS Classes
-  * for Container and Image Text
+* Custom CSS Classes for Container
+* Target Profile
+* Number of Posts fetched
+* Slider 
+  * Auto Slide
+  * Slider Scroll Delay
+  * Slider Scroll Mode
+* Post Configuration
+  * Display Name
+  * Plus One Counter
+  * Slide Number
+* Image configuration
+  * Image Size
+  * Image Design (Square, Rounded)
+  * Image Alt Text
+* Date Configuration (Format, Mode, Delimiters)  
+* Button Color Templates
+* Link to Original Post
+* Link Title Configuration
+* Filtering of Posts with empty Titles
+* Loading Text while fetching Data
+* JS Priority and Placement (head or footer)
+* JS Loading
+  * Remote, Local and Default
+* JS Execution
+  * Asynchronous
+  * Deferred
 
 ## Showroom
 Insight of the *Google Plus Feed Slider - Gantry Particle* configuration:
