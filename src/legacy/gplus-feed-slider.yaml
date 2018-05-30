@@ -14,7 +14,7 @@
 ########################################################
 
 name: Google+ Feed Slider
-description: Configure Google+ Feed Slider Particle.
+description: Rendert einen Google+ Feed Slider.
 type: particle
 icon: fa-google-plus-square
 

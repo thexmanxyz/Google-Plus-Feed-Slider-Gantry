@@ -14,7 +14,7 @@
 ########################################################
 
 name: Google+ Feed Slider
-description: Configure Google+ Feed Slider Particle.
+description: Rendert einen Google+ Feed Slider.
 type: particle
 icon: fa-google-plus-square
 
@@ -22,67 +22,67 @@ form:
   fields:
     enabled:
       type: input.checkbox
-      label: Enabled
-      description: Globally enable the Google+ Feed Slider Particle.
+      label: Aktiviert
+      description: Globale Aktivierung des Google+ Feed Slider Particles.
       default: true
 
     tabs:
       type: container.tabs
       fields:
         tab_general:
-            label: General
+            label: Allgemein
             fields:
                 tag.attributes:
                   type: collection.keyvalue
-                  label: Tag Attributes
-                  description: Additional attributes for the HTML container.
-                  key_placeholder: Key (e.g. style, name, ...)
-                  value_placeholder: Value
+                  label: Tag Attribute
+                  description: Zusätzliche Attribute für den HTML Container.
+                  key_placeholder: Schlüssel (z.B.: style, name, ...)
+                  value_placeholder: Wert
                   exclude: ['id', 'class']
 
                 css.class:
                   type: input.selectize
-                  label: CSS Classes
-                  description: Set a specific CSS class on the HTML container for custom styling.
+                  label: CSS Klassen
+                  description: Setzen Sie eine Klasse für die individuelle Gestaltung.
                   default:
 
                 general.id:
                   type: input.text
-                  label: Container ID
-                  description: This is the unique identifier applied to each particle container. Change this value in case you want to use the particle multiple times per page.
+                  label: Behälter ID
+                  description: Hierbei handelt es sich um einen eindeutigen Identifier, der jedem Behälter zugewiesen wird. Ändern Sie diesen Wert, wenn Sie das Particle auf einer Seite mehrfach verwenden möchten. 
                   placeholder: 1
                   default: 1
                   
                 general.info:
                   type: separator.note
                   class: alert alert-info
-                  content: Please be aware that the API Key can always be seen by everyone so you have to restrict the access to both your domain and product (Google+ only) in the Google API Console.
+                  content: Seien Sie sich bewusst, dass jeder Ihren API Key öffentlich einsehen kann. Bitte legen Sie in der Google API Console Einschränkungen für den Service und die Domain fest (nur Google+).
 
                 general.api_key:
                   type: input.text
-                  label: API Key
-                  description: The Google+ API Key you got from the Google API Console. Please be aware that it can always be seen by everyone so you have to restrict the access to both your domain and products (Google+ only). Please create an explicit key for this use case and restrict it appropriately.
-                  placeholder: Your API Key from Google.
+                  label: API Schlüssel
+                  description: Der Google+ API Key, den Sie Ihrer Google API Console entnehmen können. Seien Sie sich bewusst, dass jeder Ihren API Key öffentlich einsehen kann. Bitte legen Sie in der Google API Console Einschränkungen für den Service und die Domain fest (nur Google+). Erzeugen Sie für diesen Anwendungsfall einen eigenen Schlüssel und schränken Sie in entsprechend ein.
+                  placeholder: Ihr API Schlüssel von Google.
                   default: 
 
                 general.profile:
                   type: input.text
-                  label: Profile Identifier
-                  description: The identifier of the profile from where the posts should be fetched. Starting with a '+'.
+                  label: Profil ID
+                  description: Der Identifier des Profile, von welchem die Beiträge geladen werden sollen. Beginnt mit einem '+'.
                   placeholder: +LarryPage
                   default: +LarryPage
                   
                 general.max_results:
                   type: input.text
-                  label: Max Results
-                  description: The number of posts fetched from the Google API for the selected profile. The limit is 100 posts.
+                  label: Resultatanzahl
+                  description: Die Anzahl der Beiträge, die vom selektierten Profil über die Google API geladen werden sollen. Das Limit für Beiträge ist 100.
                   placeholder: 20
                   default: 20 
         
                 general.collection:
                   type: input.text
                   label: Collection
-                  description: The collection string used in the API URL. Typically 'public' should be the standard identifier.
+                  description: Der Collection String der für die API URL verwendet wird. Typischerweise ist 'public' der Standard-Identifier.
                   placeholder: public
                   default: public
 
@@ -92,141 +92,141 @@ form:
                 general.slider.auto:
                   type: input.checkbox
                   label: Auto Slide
-                  description: Define whether the slider should automatically rotate through the posts.
+                  description: Legt fest, ob der Slider automatisch durch die Beiträge iterieren soll.
                   default: true
         
                 general.slider.delay:
                   type: input.text
-                  label: Delay
-                  description: The delay between two slides in milliseconds if 'Auto Slide' was enabled.
+                  label: Verzögerung
+                  description: Die Verzögerung zwischen zwei Slides in Millisekunden. 'Auto Slide' muss aktiviert sein.
                   placeholder: 5000
                   default: 5000
 
                 general.slider.mode:
                   type: select.select
-                  label: Mode
-                  description: Select the mode for the 'Auto Slide' behaviour. Either scrolling right or left through the slides.
+                  label: Modus
+                  description: Wählen Sie bitte den Modus für das 'Auto Slide' Verhalten. Entweder Rechts-Scroll oder Links-Scroll sind mögliche Optionen.
                   default: 1
                   options:
-                    1: Right Scroll
-                    2: Left Scroll
+                    1: Rechts-Scroll
+                    2: Links-Scroll
 
                 general.slider.button_color:
                   type: select.select
-                  label: Button Color
-                  description: Select the button color mode which fits best your background. Dark for darker background colors, light for lighter background color.
+                  label: Buttonfarbe
+                  description: Wählen Sie für die Buttons einen Farbmodus aus der zu Ihrer Hintergrundfarbe passt. Die Option 'Dunkel' eignet sich für dunkle Hintergründe. Die Option 'Hell' eignet sich für Hintergründe mit heller Farbe.
                   default: 1
                   options:
-                    1: Light
-                    2: Dark
+                    1: Hell
+                    2: Dunkel
 
         tab_text:
             label: Text
             fields:
                 general.link_enable:
                   type: input.checkbox
-                  label: Enable Link
-                  description: Define whether the title link should be displayed or not.
+                  label: Aktiviere Link
+                  description: Legt fest, ob der Titel Link angezeigt werden soll oder nicht.
                   default: true
 
                 general.link_title:
                   type: input.text
                   label: Link Title
-                  description: The text applied to the link 'title=' attribute.
-                  placeholder: Link to Google+ Post
-                  default: Link to Google+ Post
+                  description: Der Text der dem Link 'title=' Attribut zugewiesen wird.
+                  placeholder: Link zum Google+ Beitrag
+                  default: Link zum Google+ Beitrag
 
                 general.filter_empty:
                   type: input.checkbox
-                  label: Filter Empty Title
-                  description: Define whether to display posts with an empty title or not.
+                  label: Leere Title filtern
+                  description: Legt fest, ob Beiträge mit leerem Titel angezeigt werden oder nicht.
                   default: true
 
                 general.empty_title:
                   type: input.text
-                  label: Empty Title Text
-                  description: The text that appears if a post with an empty title is displayed.
-                  placeholder: go to post
-                  default: go to post
+                  label: Text bei leerem Title
+                  description: Der Text, der statt einem leeren Titel angezeigt werden soll.
+                  placeholder: den Beitrag besuchen
+                  default: den Beitrag besuchen
 
                 general.loading_text:
                   type: input.text
-                  label: Loading Text
-                  description: The text that appears while the Google+ feed is loading.
-                  placeholder: The Google+ feed is loading, please be patient...
-                  default: The Google+ feed is loading, please be patient... 
+                  label: Ladetext
+                  description: Der Text, der angezeigt werden soll während der Google+ Feed lädt.
+                  placeholder: Der Google+ Feed lädt, bitte haben Sie etwas Geduld...
+                  default: Der Google+ Feed lädt, bitte haben Sie etwas Geduld...
 
         tab_post:
-            label: Post
+            label: Beitrag
             fields:
                 general.post.display_name:
                   type: input.checkbox
-                  label: Enable Display Name
-                  description: Defines whether the users name will be displayed.
+                  label: Aktiviere Anzeigename
+                  description: Legt fest, ob der Name des Benutzers angezeigt werden soll.
                   default: false
 
                 general.post.plus_one:
                   type: input.checkbox
-                  label: Enable Plus Ones
-                  description: Defines whether the +1 counter will be displayed.
+                  label: Aktiviere Plus Ones
+                  description: Legt fest, ob der +1 Zähler angezeigt werden soll.
                   default: true
 
                 general.post.slide_count:
                   type: input.checkbox
-                  label: Enable Slide Count
-                  description: Defines whether the current slide count will be shown in front of the title text.
+                  label: Aktiviere Slidenummer
+                  description: Legt fest, ob die Slidenummer vor dem eigentlich Titel Text angezeigt werden soll.
                   default: false
 
         tab_image:
-            label: Image
+            label: Bild
             fields:
                 general.image.enable:
                   type: input.checkbox
-                  label: Enable Profile Image
-                  description: Set this checkbox to show the profile image together with the post title.
+                  label: Aktiviere Profilbild
+                  description: Setzen Sie diese Checkbox, um ein Profilbild neben dem Beitrag anzuzeigen.
                   default: true
 
                 general.image.size:
                   type: input.text
-                  label: Image Size
-                  description: Set the size of the profile image which should be loaded from the Google API. Set this to either 25 or 50 for a good appearance.
-                  placeholder: use 25, 50 or any other size (without px)
+                  label: Bildgröße
+                  description: Setzen Sie die Größe des Profilbildes, welches von der Google API geladen werden soll. Für ein gutes Erscheinungsbild setzen Sie diesen Wert auf 25 oder 50.
+                  placeholder: Verwendenden Sie 25, 50 oder jede andere Größe (ohne px)
                   default: 25
 
                 general.image.design:
                   type: select.select
-                  label: Image Design
-                  description: Select the design you want to use for the profile image.
+                  label: Bilddesign
+                  description: Wählen Sie das Design des Profilbildes
                   default: 1
                   options:
-                    1: Square
-                    2: Round
+                    1: Quadratisch
+                    2: Rund
 
                 general.image.alt:
                   type: input.text
                   label: Alt Text
-                  description: The text applied to the image 'alt=' attribute.
-                  placeholder: Google Plus Profile
-                  default: Google Plus Profile
+                  description: Der Text, der dem 'alt=' Attribut des Bildes zugeordnet wird.
+                  placeholder: Google Plus Profil
+                  default: Google Plus Profil
 
         tab_date:
-            label: Date
+            label: Datum
             fields:   
                 general.date.mode:
                   type: select.select
-                  label: Date Mode
-                  description: The date mode applied to a feed slide.
+                  label: Datumsmodus
+                  description: Der Datummodus der auf eine Slide angewendet werden soll.
                   default: 3
                   options:
-                    1: Date Only
-                    2: Time Only
-                    3: Date and Time
-                    4: Disabled
+                    1: nur Datum
+                    2: nur Zeit
+                    3: Datum und Zeit
+                    4: Deaktiviert
 
                 general.date.format:
                   type: select.select
-                  label: Date Format
-                  description: The date format used for the date.
+                  label: Datumsformat
+                  description: Das Datumsformat für das Slide Datum.
                   default: 2
                   options:
                     1: DD MM YYYY
@@ -235,15 +235,15 @@ form:
 
                 general.date.date_delimiter:
                   type: input.text
-                  label: Date Delimiter
-                  description: The delimiter used within the date.
+                  label: Datum-Trennzeichen
+                  description: Das Trennzeichen innerhalb des Datums.
                   placeholder: "/"
                   default: "/"
 
                 general.date.time_delimiter:
                   type: input.text
-                  label: Time Delimiter
-                  description: The delimiter between date and time.
+                  label: Zeit-Trennzeichen
+                  description: Das Trennzeichen zwischen Datum und Zeit.
                   placeholder: " -"
                   default: " -"
                 
@@ -252,8 +252,8 @@ form:
             fields:
                 js.placement:
                   type: select.select
-                  label: JS Placement
-                  description: Placement of the JS.
+                  label: JS Platzierung
+                  description: Platzierung des JS.
                   default: head
                   options:
                     head: Header
@@ -261,26 +261,26 @@ form:
 
                 js.priority:
                   type: input.text
-                  label: JS Priority
-                  description: The priority of the JS.
+                  label: JS Priorität
+                  description: Die Priorität des JS.
                   placeholder: -10 ... 10
                   default: 0
 
                 js.path:
                   type: input.text
-                  label: JS Path
-                  description: Path to the Atom JS file either on this server (relative from template/custom) or on a different server (absolute).
-                  placeholder: path/to/JS
+                  label: JS Pfad
+                  description: Pfad zur Particle JS Datei auf diesem Server (relativ zu template/custom) oder auf einem anderen Server (absolut).
+                  placeholder: Pfad/zum/JS
                   default: js/gplus-feed-slider.js
 
                 js.execution:
                   type: select.select
-                  label: JS Execution
-                  description: The used execution method for the loaded JS.
-                  placeholder: 'Select...'
-                  default: none
+                  label: JS Ausführung
+                  description: Die verwendete Ausführungsmethode für das Laden der JS Datei.
+                  placeholder: 'Auswählen...'
+                  default: both
                   options:
-                      none: None
-                      async: Asynchronous
-                      defer: Deferred
-                      both: Both
+                      none: Keine
+                      async: Asynchron
+                      defer: Verzögert
+                      both: Beide
