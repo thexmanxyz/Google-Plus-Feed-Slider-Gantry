@@ -52,7 +52,7 @@ form:
                   description: This is the unique identifier applied to each particle container. Change this value in case you want to use the particle multiple times per page.
                   placeholder: 1
                   default: 1
-                  
+
                 general.info:
                   type: separator.note
                   class: alert alert-info
@@ -71,14 +71,14 @@ form:
                   description: The identifier of the profile from where the posts should be fetched. Starting with a '+'.
                   placeholder: +LarryPage
                   default: +LarryPage
-                  
+
                 general.max_results:
                   type: input.text
                   label: Max Results
                   description: The number of posts fetched from the Google API for the selected profile. The limit is 100 posts.
                   placeholder: 20
                   default: 20 
-        
+
                 general.collection:
                   type: input.text
                   label: Collection
@@ -94,7 +94,7 @@ form:
                   label: Auto Slide
                   description: Define whether the slider should automatically rotate through the posts.
                   default: true
-        
+
                 general.slider.delay:
                   type: input.text
                   label: Delay
@@ -246,7 +246,7 @@ form:
                   description: The delimiter between date and time.
                   placeholder: " -"
                   default: " -"
-                
+
         tab_js:
             label: Javascript
             fields:

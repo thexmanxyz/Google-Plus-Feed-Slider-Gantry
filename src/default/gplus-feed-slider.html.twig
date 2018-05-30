@@ -105,22 +105,21 @@
         <script>
             jQuery(window).load(function () {
                 var gfs = new GPlusFeedSilder();
-                
                 gfs.cfg = {container_id: "{{ slider_id|e("js") }}",
                            api_key: "{{ api_key|e("js") }}", 
                            profile: "{{ profile|e("js") }}", 
                            collection: "{{ collection|e("js") }}", 
                            maxResults: {{ max_results }},
-                            
+
                            link_enable: {{ _self.boolToInt(link_enable) }},
                            link_title: "{{ link_title|e("js") }}" ,
                            filter_empty: {{ _self.boolToInt(filter_empty) }},
                            empty_title: "{{ empty_title|e("js") }}",
-                           
+
                            display_name: {{ _self.boolToInt(display_name) }},
                            plus_one: {{ _self.boolToInt(plus_one) }},
                            slide_count: {{ _self.boolToInt(slide_count) }},
-                           
+
                            slider_auto: {{ _self.boolToInt(slider_auto) }},
                            slider_delay: {{ slider_delay }},
                            slider_mode: {{ slider_mode }},
@@ -129,12 +128,12 @@
                            image_design: {{ image_design }},
                            image_size: {{ image_size }},
                            image_alt: "{{ image_alt|e("js") }}",
-                                            
+
                            date_mode: {{ date_mode }},
                            date_format: {{ date_format }},
                            date_delimiter: "{{ date_delimiter|e("js") }}",
                            time_delimiter: "{{ time_delimiter|e("js") }}"};
-                
+
                 gfs.addLoadFeedEvent();
             });
         </script>
