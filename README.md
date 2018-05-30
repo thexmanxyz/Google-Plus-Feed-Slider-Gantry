@@ -1,5 +1,5 @@
 # Google+ Feed Slider - Particle for Gantry
-This projects implements a feed slider that fetches post data from an existing Google+ profile.  The appearance as well as the data output can be configured via the Gantry templating framework. Moreover, **Google+ Feed Slider** supports the flexible parameterization of the API requests, the slider styling and rendering. Furthermore, it provides an easy, user friendly and GUI assisted configuration and integration. In the current revision the following CMSs are supported:
+This projects implements a feed slider that fetches post data from an existing Google+ profile.  The appearance as well as the data output can be configured via the Gantry templating framework. Moreover, **Google+ Feed Slider** supports the flexible parameterization of API requests, the custom slider styling and rendering. Furthermore, it provides an easy, user friendly and GUI assisted configuration and integration. In the current revision the following CMSs are supported:
 * Joomla
 * Wordpress
 * Grav
@@ -72,14 +72,35 @@ Insight of the *Google Plus Feed Slider - Gantry Particle* configuration:
 
 ![1](/screenshots/backend_general.png)
 
+**Backend (2)** - *[Slider](/screenshots/backend_slider.png)*
 
+![2](/screenshots/backend_slider.png)
 
+**Backend (3)** - *[Text](/screenshots/backend_text.png)*
+
+![3](/screenshots/backend_text.png)
+
+**Backend (4)** - *[Post](/screenshots/backend_post.png)*
+
+![4](/screenshots/backend_post.png)
+
+**Backend (5)** - *[Image](/screenshots/backend_image.png)*
+
+![5](/screenshots/backend_image.png)
+
+**Backend (6)** - *[Date](/screenshots/backend_date.png)*
+
+![6](/screenshots/backend_date.png)
+
+**Backend (7)** - *[Javascript](/screenshots/backend_js.png)*
+
+![7](/screenshots/backend_js.png)
 
 Example for a basic slider:
 
 **Frontend (1)** - *[Slider](/screenshots/frontend_slider.gif)*
 
-![8](/screenshots/frontend_slider.gif)
+![8](/screenshots/frontend_slider.png)
 
 ## Future Tasks
 * support more API options which can be rendered to slide
