@@ -183,7 +183,7 @@ function GPlusFeedSilder(){
             var json;
             
             if(this.status >= 400){
-                $slider.find(sel.element + " > span").html("Server / Configuration Error - Check API Key!");
+                $slider.find(sel.element + " > span").html("Server / Configuration Error - Check API Key! - Error Code: " + this.status);
                 return;
             }
             

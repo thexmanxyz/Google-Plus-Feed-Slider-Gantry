@@ -23,7 +23,7 @@ set prj_id=gfs
 set prj_rev=v1.0.1
 set prj_name=gplus-feed-slider
 set prj_fullname=Google Plus Feed Slider - Particle
-set prj_title_hr=------------------------------------
+set prj_title_hr=--------------------------------------
 set prj_def_lang=EN
 set prj_sup_langs=EN, DE
 
