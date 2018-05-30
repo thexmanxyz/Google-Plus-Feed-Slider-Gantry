@@ -52,7 +52,7 @@ Please be aware that the template folder path varies in dependence of the used C
 ## Configuration
 1. Go to your Gantry templating backend (e.g. Extensions/Templates).
 2. Switch to **Layout** and add the new appearing Particle called **Google Plus Feed Slider** either globally to your site (**base outline**), to a specific template or page by dragging it to the designated section.
-3. Get a API Key from the [Google API Console](https://console.cloud.google.com/apis/dashboard). Set your API Key within in the Particle. 
+3. Get a API Key from the [Google API Console](https://console.cloud.google.com/apis/dashboard). Set your API Key within the Particle backend. 
 4. Configure the appearance according to your favor.
 
 **Important:** *Please be aware that the API Key can always be seen by everyone so you have to restrict the access to both your domain and products (Google+ only). Please create an explicit key for this use case and restrict it appropriately*
