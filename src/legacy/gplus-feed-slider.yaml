@@ -107,8 +107,38 @@ form:
           description: Select the mode for the 'Auto Slide' behaviour. Either scrolling right or left through the slides.
           default: 1
           options:
-            1: Right Scroll
-            2: Left Scroll
+            1: Right / Down Scroll
+            2: Left /Down Scroll
+ 
+        general.slider.effect:
+          type: select.select
+          label: Slide Effect
+          description: Select the effect when switching slides.
+          default: 1
+          options:
+            1: None
+            2: Fade 50 (1sec)
+            3: Fade 50 (2sec)
+            4: Fade 100 (1sec)
+            5: Fade 100 (2sec)
+            6: Slide 10 (1sec)
+            7: Slide 10 (2sec)
+            8: Slide 20 (1sec)
+            9: Slide 20 (2sec) 
+            10: Slide 30 (1sec)
+            11: Slide 30 (2sec) 
+            12: Slide 10 + Fade 50 (1sec)
+            13: Slide 10 + Fade 50 (2sec)
+            14: Slide 20 + Fade 50 (1sec)
+            15: Slide 20 + Fade 50 (2sec)
+            16: Slide 30 + Fade 50 (1sec)
+            17: Slide 30 + Fade 50 (2sec)
+            18: Slide 10 + Fade 100 (1sec)
+            19: Slide 10 + Fade 100 (2sec)
+            20: Slide 20 + Fade 100 (1sec)
+            21: Slide 20 + Fade 100 (2sec)
+            22: Slide 30 + Fade 100 (1sec)
+            23: Slide 30 + Fade 100 (2sec)
 
         general.slider.button_color:
           type: select.select
@@ -118,6 +148,15 @@ form:
           options:
             1: Light
             2: Dark
+
+        general.slider.button_mode:
+          type: select.select
+          label: Button Mode
+          description: Select the button mode to define how the buttons should be arranged.
+          default: 1
+          options:
+            1: Left / Right
+            2: Top / Down
 
     set_text:
       type: container.set

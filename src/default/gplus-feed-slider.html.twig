@@ -44,6 +44,7 @@
 {% set slider_mode = general.slider.mode|default(1) %}
 {% set slider_effect = general.slider.effect|default(1) %}
 {% set slider_btn_color = general.slider.button_color|default(1) %}
+{% set slider_btn_mode = general.slider.button_mode|default(1) %}
 {% set slider_btn_class = " " ~ (slider_btn_color == 1 ? "scroll-light" : "scroll-dark") %}
 
 {% set link_enable = general.link_enable|default(true) %}
@@ -99,10 +100,16 @@
                     <span>{{loading_text}}</span>
                 </span>
             </span>
-            <span class="scroll-contrainer">
-                <a class="scroll-left{{slider_btn_class}}" href="#">&lt;</a>
-                <a class="scroll-right{{slider_btn_class}}" href="#">&gt;</a>
+            <span class="scroll-container scroll-lr{% if slider_btn_mode == 2 %} scroll-off{% endif %}">
+                <a class="scroll-left{{slider_btn_class}}" href="#"><i class="fa fa-arrow-left"></i></a>
+                <a class="scroll-right{{slider_btn_class}}" href="#"><i class="fa fa-arrow-right"></i></a>
             </span>
+            {%- if slider_btn_mode == 2 -%}
+            <span class="scroll-container scroll-td">
+                <a class="scroll-left{{slider_btn_class}}" href="#"><i class="fa fa-arrow-up"></i></a>
+                <a class="scroll-right{{slider_btn_class}}" href="#"><i class="fa fa-arrow-down"></i></a>
+            </span>
+            {%- endif -%}
         </div>  
     </div>
     {%- scripts in jsPlace with { priority: jsPrior } -%}

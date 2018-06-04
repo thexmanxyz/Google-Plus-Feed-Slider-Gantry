@@ -107,8 +107,47 @@ form:
           description: Wählen Sie bitte den Modus für das 'Auto Slide' Verhalten. Entweder Rechts-Scroll oder Links-Scroll sind mögliche Optionen.
           default: 1
           options:
-            1: Rechts-Scroll
-            2: Links-Scroll
+            1: Rechts- / Runter-Scroll
+            2: Links- / Rauf-Scroll
+ 
+        general.slider.effect:
+          type: select.select
+          label: Slide Effekt
+          description: Wählen Sie den Effekt der beim Wechsel der Slides angewandt wird.
+          default: 1
+          options:
+            1: None
+            2: Fade 50 (1Sek)
+            3: Fade 50 (2Sek)
+            4: Fade 100 (1Sek)
+            5: Fade 100 (2Sek)
+            6: Slide 10 (1Sek)
+            7: Slide 10 (2Sek)
+            8: Slide 20 (1Sek)
+            9: Slide 20 (2Sek) 
+            10: Slide 30 (1Sek)
+            11: Slide 30 (2Sek) 
+            12: Slide 10 + Fade 50 (1Sek)
+            13: Slide 10 + Fade 50 (2Sek)
+            14: Slide 20 + Fade 50 (1Sek)
+            15: Slide 20 + Fade 50 (2Sek)
+            16: Slide 30 + Fade 50 (1Sek)
+            17: Slide 30 + Fade 50 (2Sek)
+            18: Slide 10 + Fade 100 (1Sek)
+            19: Slide 10 + Fade 100 (2Sek)
+            20: Slide 20 + Fade 100 (1Sek)
+            21: Slide 20 + Fade 100 (2Sek)
+            22: Slide 30 + Fade 100 (1Sek)
+            23: Slide 30 + Fade 100 (2Sek)
+
+        general.slider.button_mode:
+          type: select.select
+          label: Button Mode
+          description: Wählen Sie einen Mode, um die Anordnung der Buttons zu ändern.
+          default: 1
+          options:
+            1: Links / Rechts
+            2: Rauf / Runter
 
         general.slider.button_color:
           type: select.select

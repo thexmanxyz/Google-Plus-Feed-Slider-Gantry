@@ -71,6 +71,7 @@ Please be aware that the template folder path varies in dependence of the used C
   * Auto Slide
   * Slider Scroll Delay
   * Slider Scroll Mode
+  * Slider Effects (about 25)
 * Post Configuration
   * Display Name
   * Plus One Counter
@@ -80,9 +81,13 @@ Please be aware that the template folder path varies in dependence of the used C
   * Image Design (Square, Rounded)
   * Image Alt Text
 * Date Configuration (Format, Mode, Delimiters)  
-* Button Color Templates
+* Button Configuration
+  * Different Designs
+  * Arrangement Modes
 * Link to Original Post
-* Link Title Configuration
+* Link Title
+  * Link back to Original Post
+  * Target Configuration
 * Filtering of Posts with empty Titles
 * Loading Text while fetching Data
 * JS Priority and Placement (head or footer)

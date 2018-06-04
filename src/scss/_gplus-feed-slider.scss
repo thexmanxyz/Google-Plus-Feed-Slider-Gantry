@@ -24,29 +24,56 @@
     .content-container{
         display: inline-block;
         margin-top: 0.25rem;
-        width: calc(100% - 100px);
+        width: calc(100% - 120px);
+        vertical-align: middle;
     }
 
     .loading-msg{
         margin-top: 0.4375rem;
     }
 
-    .scroll-contrainer{
+    .scroll-container{
+        display: inline-block;
         width: 100px;
-        padding-bottom: 0.625rem;
         vertical-align: middle;
-        padding-bottom: 0.75rem;
+    }
+    
+    .scroll-container.scroll-td{
+        width: 50px;
+        padding-bottom: 0;
+    }
+    
+    .scroll-container.scroll-lr{
+        padding-top: 0.25rem;
+    }
+    
+    .scroll-container.scroll-lr.scroll-off{
+        display: none;
     }
 
     .scroll-left,
     .scroll-right{
-        font-size: 1.125rem;
+        font-size: 1rem;
         margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
         display: inline-block;
-        margin-bottom: 8px;
         padding: 0 0.8125rem 0.1875rem 0.75rem;
         border-radius: 5px;
         text-shadow: none;
+    }
+    
+    .scroll-left{
+        margin-right: 0.125rem;
+    }
+    .scroll-right{
+        margin-left: 0.125rem;
+    }
+    
+    .scroll-td{
+        .scroll-left,
+        .scroll-right{
+            margin: 0.125rem;
+        }
     }
 
     .scroll-light{
@@ -67,12 +94,7 @@
         border: 1px solid #BBB;
     }
 
-    .scroll-left{
-        margin-right: 0.125rem;
-    }
-    .scroll-right{
-        margin-left: 0.125rem;
-    }
+    margin: 0.125rem;
 
     .slide-element{
         .slide-image-container{}
@@ -88,8 +110,11 @@
         }
     }
     
-    .slide-on.slide-effect-1{}
-    .slide-on.slide-effect-2{
+    .slide-on.slide-effect-1.left-dir, 
+    .slide-on.slide-effect-1.right-dir{}
+    
+    .slide-on.slide-effect-2.left-dir,
+    .slide-on.slide-effect-2.right-dir{
         animation: fade_in_half 1s;
         -moz-animation: fade_in_half 1s;
         -webkit-animation: fade_in_half 1s;
@@ -97,7 +122,8 @@
         animation: fade_in_half 1s;
     }
     
-    .slide-on.slide-effect-3{
+    .slide-on.slide-effect-3.left-dir,
+    .slide-on.slide-effect-3.right-dir{
         animation: fade_in_half 2s;
         -moz-animation: fade_in_half 2s;
         -webkit-animation: fade_in_half 2s;
@@ -105,7 +131,8 @@
         animation: fade_in_half 2s;
     }
     
-    .slide-on.slide-effect-4{
+    .slide-on.slide-effect-4.left-dir
+    .slide-on.slide-effect-4.right-dir{
         animation: fade_in_full 1s;
         -moz-animation: fade_in_full 1s;
         -webkit-animation: fade_in_full 1s;
@@ -113,7 +140,8 @@
         animation: fade_in_full 1s;
     }
     
-    .slide-on.slide-effect-5{
+    .slide-on.slide-effect-5.left-dir,
+    .slide-on.slide-effect-5.right-dir{
         animation: fade_in_full 2s;
         -moz-animation: fade_in_full 2s;
         -webkit-animation: fade_in_full 2s;
@@ -121,22 +149,294 @@
         animation: fade_in_full 2s;
     }
     
-    .slide-on.slide-effect-6{
-        animation: slide_left 2s;
-        -moz-animation: slide_left 2s;
-        -webkit-animation: slide_left 2s;
-        -o-animation: slide_left 2s;
-        animation: slide_left 2s;
+    .slide-on.slide-effect-6.left-dir{
+        animation: slide_left_10 1s;
+        -moz-animation: slide_left_10 1s;
+        -webkit-animation: slide_left_10 1s;
+        -o-animation: slide_left_10 1s;
+        animation: slide_left_10 1s;
     }
     
-    .slide-on.slide-effect-7{
-        animation: slide_left 2s, fade_in_full 2s;
-        -moz-animation: slide_left 2s, fade_in_full 2s;
-        -webkit-animation: slide_left 2s, fade_in_full 2s;
-        -o-animation: slide_left 2s, fade_in_full 2s;
-        animation: slide_left 2s, fade_in_full 2s;
+    .slide-on.slide-effect-6.right-dir{
+        animation: slide_right_10 1s;
+        -moz-animation: slide_right_10 1s;
+        -webkit-animation: slide_right_10 1s;
+        -o-animation: slide_right_10 1s;
+        animation: slide_right_10 1s;
+    }
+
+    .slide-on.slide-effect-7.left-dir{
+        animation: slide_left_10 2s;
+        -moz-animation: slide_left_10 2s;
+        -webkit-animation: slide_left_10 2s;
+        -o-animation: slide_left_10 2s;
+        animation: slide_left_10 2s;
     }
     
+    .slide-on.slide-effect-7.right-dir{
+        animation: slide_right_10 2s;
+        -moz-animation: slide_right_10 2s;
+        -webkit-animation: slide_right_10 2s;
+        -o-animation: slide_right_10 2s;
+        animation: slide_right_10 2s;
+    }
+          
+    .slide-on.slide-effect-8.left-dir{
+        animation: slide_left_20 1s;
+        -moz-animation: slide_left_20 1s;
+        -webkit-animation: slide_left_20 1s;
+        -o-animation: slide_left_20 1s;
+        animation: slide_left_20 1s;
+    }
+    
+    .slide-on.slide-effect-8.right-dir{
+        animation: slide_right_20 1s;
+        -moz-animation: slide_right_20 1s;
+        -webkit-animation: slide_right_20 1s;
+        -o-animation: slide_right_20 1s;
+        animation: slide_right_20 1s;
+    }
+
+    .slide-on.slide-effect-9.left-dir{
+        animation: slide_left_20 2s;
+        -moz-animation: slide_left_20 2s;
+        -webkit-animation: slide_left_20 2s;
+        -o-animation: slide_left_20 2s;
+        animation: slide_left_20 2s;
+    }
+    
+    .slide-on.slide-effect-9.right-dir{
+        animation: slide_right_20 2s;
+        -moz-animation: slide_right_20 2s;
+        -webkit-animation: slide_right_20 2s;
+        -o-animation: slide_right_20 2s;
+        animation: slide_right_20 2s;
+    }
+         
+    .slide-on.slide-effect-10.left-dir{
+        animation: slide_left_30 1s;
+        -moz-animation: slide_left_30 1s;
+        -webkit-animation: slide_left_30 1s;
+        -o-animation: slide_left_30 1s;
+        animation: slide_left_30 1s;
+    }
+
+    .slide-on.slide-effect-10.right-dir{
+        animation: slide_right_30 1s;
+        -moz-animation: slide_right_30 1s;
+        -webkit-animation: slide_right_30 1s;
+        -o-animation: slide_right_30 1s;
+        animation: slide_right_30 1s;
+    }
+    
+    .slide-on.slide-effect-11.left-dir{
+        animation: slide_left_30 2s;
+        -moz-animation: slide_left_30 2s;
+        -webkit-animation: slide_left_30 2s;
+        -o-animation: slide_left_30 2s;
+        animation: slide_left_30 2s;
+    }
+    
+    .slide-on.slide-effect-11.right-dir{
+        animation: slide_right_30 2s;
+        -moz-animation: slide_right_30 2s;
+        -webkit-animation: slide_right_30 2s;
+        -o-animation: slide_right_30 2s;
+        animation: slide_right_30 2s;
+    }
+    
+    .slide-on.slide-effect-12.lfet-dir{
+        animation: slide_left_10 1s, fade_in_half 1s;
+        -moz-animation: slide_left_10 1s, fade_in_half 1s;
+        -webkit-animation: slide_left_10 1s, fade_in_half 1s;
+        -o-animation: slide_left_10 1s, fade_in_half 1s;
+        animation: slide_left_10 1s, fade_in_half 1s;
+    }
+    
+    .slide-on.slide-effect-12.right-dir{
+        animation: slide_right_10 1s, fade_in_half 1s;
+        -moz-animation: slide_right_10 1s, fade_in_half 1s;
+        -webkit-animation: slide_right_10 1s, fade_in_half 1s;
+        -o-animation: slide_right_10 1s, fade_in_half 1s;
+        animation: slide_right_10 1s, fade_in_half 1s;
+    }
+    
+    .slide-on.slide-effect-13.left-dir{
+        animation: slide_left_10 2s, fade_in_half 2s;
+        -moz-animation: slide_left_10 2s, fade_in_half 2s;
+        -webkit-animation: slide_left_10 2s, fade_in_half 2s;
+        -o-animation: slide_left_10 2s, fade_in_half 2s;
+        animation: slide_left_10 2s, fade_in_half 2s;
+    }
+   
+    .slide-on.slide-effect-13.right-dir{
+        animation: slide_right_10 2s, fade_in_half 2s;
+        -moz-animation: slide_right_10 2s, fade_in_half 2s;
+        -webkit-animation: slide_right_10 2s, fade_in_half 2s;
+        -o-animation: slide_right_10 2s, fade_in_half 2s;
+        animation: slide_right_10 2s, fade_in_half 2s;
+    }
+         
+    .slide-on.slide-effect-14.left-dir{
+        animation: slide_left_20 1s, fade_in_half 1s;
+        -moz-animation: slide_left_20 1s, fade_in_half 1s;
+        -webkit-animation: slide_left_20 1s, fade_in_half 1s;
+        -o-animation: slide_left_20 1s, fade_in_half 1s;
+        animation: slide_left_20 1s, fade_in_half 1s;
+    }
+
+    .slide-on.slide-effect-14.right-dir{
+        animation: slide_right_20 1s, fade_in_half 1s;
+        -moz-animation: slide_right_20 1s, fade_in_half 1s;
+        -webkit-animation: slide_right_20 1s, fade_in_half 1s;
+        -o-animation: slide_right_20 1s, fade_in_half 1s;
+        animation: slide_right_20 1s, fade_in_half 1s;
+    }
+    
+    .slide-on.slide-effect-15.left-dir{
+        animation: slide_left_20 2s, fade_in_half 2s;
+        -moz-animation: slide_left_20 2s, fade_in_half 2s;
+        -webkit-animation: slide_left_20 2s, fade_in_half 2s;
+        -o-animation: slide_left_20 2s, fade_in_half 2s;
+        animation: slide_left_20 2s, fade_in_half 2s;
+    }
+    
+    .slide-on.slide-effect-15.right-dir{
+        animation: slide_right_20 2s, fade_in_half 2s;
+        -moz-animation: slide_right_20 2s, fade_in_half 2s;
+        -webkit-animation: slide_right_20 2s, fade_in_half 2s;
+        -o-animation: slide_right_20 2s, fade_in_half 2s;
+        animation: slide_right_20 2s, fade_in_half 2s;
+    }
+          
+    .slide-on.slide-effect-16.left-dir{
+        animation: slide_left_30 1s, fade_in_half 1s;
+        -moz-animation: slide_left_30 1s, fade_in_half 1s;
+        -webkit-animation: slide_left_30 1s, fade_in_half 1s;
+        -o-animation: slide_left_30 1s, fade_in_half 1s;
+        animation: slide_left_30 1s, fade_in_half 1s;
+    }
+
+    .slide-on.slide-effect-16.right-dir{
+        animation: slide_right_30 1s, fade_in_half 1s;
+        -moz-animation: slide_right_30 1s, fade_in_half 1s;
+        -webkit-animation: slide_right_30 1s, fade_in_half 1s;
+        -o-animation: slide_right_30 1s, fade_in_half 1s;
+        animation: slide_right_30 1s, fade_in_half 1s;
+    }
+    
+    .slide-on.slide-effect-17.left-dir{
+        animation: slide_left_30 2s, fade_in_half 2s;
+        -moz-animation: slide_left_30 2s, fade_in_half 2s;
+        -webkit-animation: slide_left_30 2s, fade_in_half 2s;
+        -o-animation: slide_left_30 2s, fade_in_half 2s;
+        animation: slide_left_30 2s, fade_in_half 2s;
+    }
+    
+    .slide-on.slide-effect-17.right-dir{
+        animation: slide_right_30 2s, fade_in_half 2s;
+        -moz-animation: slide_right_30 2s, fade_in_half 2s;
+        -webkit-animation: slide_right_30 2s, fade_in_half 2s;
+        -o-animation: slide_right_30 2s, fade_in_half 2s;
+        animation: slide_right_30 2s, fade_in_half 2s;
+    }
+
+    .slide-on.slide-effect-18.left-dir{
+        animation: slide_left_10 1s, fade_in_full 1s;
+        -moz-animation: slide_left_10 1s, fade_in_full 1s;
+        -webkit-animation: slide_left_10 1s, fade_in_full 1s;
+        -o-animation: slide_left_10 1s, fade_in_full 1s;
+        animation: slide_left_10 1s, fade_in_full 1s;
+    }
+    
+    .slide-on.slide-effect-18.right-dir{
+        animation: slide_right_10 1s, fade_in_full 1s;
+        -moz-animation: slide_right_10 1s, fade_in_full 1s;
+        -webkit-animation: slide_right_10 1s, fade_in_full 1s;
+        -o-animation: slide_right_10 1s, fade_in_full 1s;
+        animation: slide_right_10 1s, fade_in_full 1s;
+    }
+    
+    .slide-on.slide-effect-19.left-dir{
+        animation: slide_left_10 2s, fade_in_full 2s;
+        -moz-animation: slide_left_10 2s, fade_in_full 2s;
+        -webkit-animation: slide_left_10 2s, fade_in_full 2s;
+        -o-animation: slide_left_10 2s, fade_in_full 2s;
+        animation: slide_left_10 2s, fade_in_full 2s;
+    }
+    
+    .slide-on.slide-effect-19.right-dir{
+        animation: slide_right_10 2s, fade_in_full 2s;
+        -moz-animation: slide_right_10 2s, fade_in_full 2s;
+        -webkit-animation: slide_right_10 2s, fade_in_full 2s;
+        -o-animation: slide_right_10 2s, fade_in_full 2s;
+        animation: slide_right_10 2s, fade_in_full 2s;
+    }
+         
+    .slide-on.slide-effect-20.left-dir{
+        animation: slide_left_20 1s, fade_in_full 1s;
+        -moz-animation: slide_left_20 1s, fade_in_full 1s;
+        -webkit-animation: slide_left_20 1s, fade_in_full 1s;
+        -o-animation: slide_left_20 1s, fade_in_full 1s;
+        animation: slide_left_20 1s, fade_in_full 1s;
+    }
+    
+    .slide-on.slide-effect-20.right-dir{
+        animation: slide_right_20 1s, fade_in_full 1s;
+        -moz-animation: slide_right_20 1s, fade_in_full 1s;
+        -webkit-animation: slide_right_20 1s, fade_in_full 1s;
+        -o-animation: slide_right_20 1s, fade_in_full 1s;
+        animation: slide_right_20 1s, fade_in_full 1s;
+    }
+    
+    .slide-on.slide-effect-21.left-dir{
+        animation: slide_left_20 2s, fade_in_full 2s;
+        -moz-animation: slide_left_20 2s, fade_in_full 2s;
+        -webkit-animation: slide_left_20 2s, fade_in_full 2s;
+        -o-animation: slide_left_20 2s, fade_in_full 2s;
+        animation: slide_left_20 2s, fade_in_full 2s;
+    }
+    
+    .slide-on.slide-effect-21.right-dir{
+        animation: slide_right_20 2s, fade_in_full 2s;
+        -moz-animation: slide_right_20 2s, fade_in_full 2s;
+        -webkit-animation: slide_right_20 2s, fade_in_full 2s;
+        -o-animation: slide_right_20 2s, fade_in_full 2s;
+        animation: slide_right_20 2s, fade_in_full 2s;
+    }
+         
+    .slide-on.slide-effect-22.left-dir{
+        animation: slide_left_30 1s, fade_in_full 1s;
+        -moz-animation: slide_left_30 1s, fade_in_full 1s;
+        -webkit-animation: slide_left_30 1s, fade_in_full 1s;
+        -o-animation: slide_left_30 1s, fade_in_full 1s;
+        animation: slide_left_30 1s, fade_in_full 1s;
+    }
+    
+    .slide-on.slide-effect-22.right-dir{
+        animation: slide_right_30 1s, fade_in_full 1s;
+        -moz-animation: slide_right_30 1s, fade_in_full 1s;
+        -webkit-animation: slide_right_30 1s, fade_in_full 1s;
+        -o-animation: slide_right_30 1s, fade_in_full 1s;
+        animation: slide_right_30 1s, fade_in_full 1s;
+    }
+    
+    .slide-on.slide-effect-23.left-dir{
+        animation: slide_left_30 2s, fade_in_full 2s;
+        -moz-animation: slide_left_30 2s, fade_in_full 2s;
+        -webkit-animation: slide_left_30 2s, fade_in_full 2s;
+        -o-animation: slide_left_30 2s, fade_in_full 2s;
+        animation: slide_left_30 2s, fade_in_full 2s;
+    }
+    
+    .slide-on.slide-effect-23.right-dir{
+        animation: slide_right_30 2s, fade_in_full 2s;
+        -moz-animation: slide_right_30 2s, fade_in_full 2s;
+        -webkit-animation: slide_right_30 2s, fade_in_full 2s;
+        -o-animation: slide_right_30 2s, fade_in_full 2s;
+        animation: slide_right_30 2s, fade_in_full 2s;
+    }
+
     .slide-on{
         display:inherit;
     }
@@ -151,10 +451,24 @@
         .content-container{
             width: 100%;
         }
-        .scroll-contrainer{
-            display: inline-block;
+        
+        .scroll-container{
             width: 100%;
             text-align: center;
+        }
+        
+        .scroll-container.scroll-lr.scroll-off{
+            display: inline-block;
+        }
+        
+        .scroll-container.scroll-td{
+            display: none;
+        }
+        
+        .scroll-left,
+        .scroll-right{
+            margin-top: 0.25rem;
+            margin-bottom: 0.125rem
         }
         
         .slide-element{
@@ -206,39 +520,48 @@
     to { opacity: 1; }
 }
 
-/* Typing */
-@-webkit-keyframes typing {
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
+/* Fade Out */
+@keyframes fade_out {
+    from { opacity:1; }
+    to { opacity:0; }
 }
-@-moz-keyframes typing {
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
+@-moz-keyframes fade_out {
+    from { opacity:1; }
+    to { opacity:0; }
 }
-@-ms-keyframes typing {
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
+@-webkit-keyframes fade_out {
+    from { opacity:1; }
+    to { opacity:0; }
 }
-@-o-keyframes typing {
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
-}
-@keyframes typing {
-    0% {width:100%}
-    40% {width:0%}
-    60% {width:0%;}
-    100% {width:100%;}
+@-o-keyframes fade_out {
+    from { opacity:1; }
+    to { opacity:0; }
 }
 
-@keyframes slide_left {
+/* Slide Right */
+@keyframes slide_right_10 {
+    from { margin-left: 10%; width: 100%; }
+    to { margin-left: 0%; width: 100%; }
+}
+@keyframes slide_right_20 {
+    from { margin-left: 20%; width: 100%; }
+    to { margin-left: 0%; width: 100%; }
+}
+@keyframes slide_right_30 {
     from { margin-left: 30%; width: 100%; }
     to { margin-left: 0%; width: 100%; }
+}
+
+/* Slide Left */
+@keyframes slide_left_10 {
+    from { margin-left: -20%; width: 100%; }
+    to { margin-left: 0; width: 100%; }
+}
+@keyframes slide_left_20 {
+    from { margin-left: -40%; width: 100%; }
+    to { margin-left: 0; width: 100%; }
+}
+@keyframes slide_left_30 {
+    from { margin-left: -60%; width: 100%; }
+    to { margin-left: 0; width: 100%; }
 }

@@ -68,11 +68,18 @@ function GPlusFeedSilder(){
 
     //scrolling left / rights
     this.slide = function(gfs, slides, auto, mode){
-        var cls = {on: "slide-on", off: "slide-off"};
+        var cls = {on: "slide-on", off: "slide-off", left: "left-dir", right: "right-dir"};
         return function(){
             if(!gfs.isSlidable(gfs, slides, auto, cls)) return;
-            if(mode == 1) gfs.currentSlide = (gfs.currentSlide != 0) ? gfs.currentSlide - 1 : slides.length - 1;
-            else gfs.currentSlide = (gfs.currentSlide != slides.length - 1) ? gfs.currentSlide + 1 : 0;
+            if(mode == 1){
+                gfs.currentSlide = (gfs.currentSlide != 0) ? gfs.currentSlide - 1 : slides.length - 1;
+                slides[gfs.currentSlide].classList.add(cls.left);
+                slides[gfs.currentSlide].classList.remove(cls.right);
+            }else{
+                gfs.currentSlide = (gfs.currentSlide != slides.length - 1) ? gfs.currentSlide + 1 : 0;
+                slides[gfs.currentSlide].classList.add(cls.right);
+                slides[gfs.currentSlide].classList.remove(cls.left);
+            }
             slides[gfs.currentSlide].classList.add(cls.on);
             slides[gfs.currentSlide].classList.remove(cls.off);
         };
