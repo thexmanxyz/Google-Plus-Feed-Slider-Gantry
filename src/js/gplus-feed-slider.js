@@ -28,6 +28,7 @@ function GPlusFeedSilder(){
 
                 link_enable: true,
                 link_title: "Link to Google+ Post",
+                link_target: "_blank",
                 filter_empty: true,
                 empty_title: "go to post",
 
@@ -38,6 +39,7 @@ function GPlusFeedSilder(){
                 slider_auto: true,
                 slider_delay: 5000,
                 slider_mode: 1,
+                slider_effect: 1,
 
                 image_enable: true,
                 image_design: 2,
@@ -50,7 +52,7 @@ function GPlusFeedSilder(){
                 time_delimiter: ' -'};
 
     //check if should be slided and clear old state
-    this.isSlidable = function (gfs, slides, auto){
+    this.isSlidable = function (gfs, slides, auto, cls){        
         if(auto && gfs.delayedAuto) {
             gfs.delayedAuto = false;
             return false;
@@ -58,26 +60,21 @@ function GPlusFeedSilder(){
             gfs.delayedAuto = true;
         }
         for (var i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
+            slides[i].classList.add(cls.off);
+            slides[i].classList.remove(cls.on);
         }
         return true;
     };
 
-    //scrolling right
-    this.slideRight = function slideRight(gfs, slides, auto) {
+    //scrolling left / rights
+    this.slide = function(gfs, slides, auto, mode){
+        var cls = {on: "slide-on", off: "slide-off"};
         return function(){
-            if(!gfs.isSlidable(gfs, slides, auto)) return;
-            gfs.currentSlide = (gfs.currentSlide != slides.length - 1) ? gfs.currentSlide + 1 : 0;
-            slides[gfs.currentSlide].style.display = "inherit";
-        };
-    };
-
-    //scrolling left
-    this.slideLeft = function slideLeft(gfs, slides, auto) {
-        return function(){
-            if(!gfs.isSlidable(gfs, slides, auto)) return;
-            gfs.currentSlide = (gfs.currentSlide != 0) ? gfs.currentSlide - 1 : slides.length - 1;
-            slides[gfs.currentSlide].style.display = "inherit";
+            if(!gfs.isSlidable(gfs, slides, auto, cls)) return;
+            if(mode == 1) gfs.currentSlide = (gfs.currentSlide != 0) ? gfs.currentSlide - 1 : slides.length - 1;
+            else gfs.currentSlide = (gfs.currentSlide != slides.length - 1) ? gfs.currentSlide + 1 : 0;
+            slides[gfs.currentSlide].classList.add(cls.on);
+            slides[gfs.currentSlide].classList.remove(cls.off);
         };
     };
 
@@ -104,7 +101,7 @@ function GPlusFeedSilder(){
                     dateTime += date.getFullYear() + del + prepare(date.getMonth()) + del + prepare(date.getDate());
             }
         }
-
+        
         if(this.cfg.date_mode == 2 || this.cfg.date_mode == 3){
             dateTime += this.cfg.time_delimiter + " " + prepare(date.getHours()) + ":" + prepare(date.getMinutes());  
         }
@@ -115,6 +112,7 @@ function GPlusFeedSilder(){
     this.buildSlide = function(gfs, slide, state, count){
         var cls = {on: "slide-on",
                      off: "slide-off",
+                     effect: "slide-effect-" + gfs.cfg.slider_effect,
                      element: "slide-element",
                      date: "slide-date",
                      name: "slide-display-name",
@@ -124,13 +122,20 @@ function GPlusFeedSilder(){
 
         var imgUrl = slide.actor.image.url;
         var slideText;
+        var relTarget;
         var html;
+        
+        if(gfs.cfg.link_target !== 'none'){
+            relTarget = " target=\"" + gfs.cfg.link_target + "\"";
+            if(gfs.cfg.link_target === '_blank')
+                relTarget += " rel=\"noopener noreferrer\""
+        }
 
         slideText = (gfs.cfg.slide_count ? count + ". | " : "") + (!slide.title ? gfs.cfg.empty_title : slide.title);
         imgUrl = ((gfs.cfg.image_size != 50) ? imgUrl.replace("sz=50", "sz=25") : imgUrl);
 
-        html = "<div class=\"" + cls.element + "" + (state ? " " + cls.on : " " + cls.off) + "\"" + ">";
-        html += ((gfs.cfg.link_enable) ? "<a href=\"" + slide.url + "\" title=\"" + gfs.cfg.link_title + "\">" + slideText + "</a>" : slideText);
+        html = "<div class=\"" + cls.element + "" + (state ? " " + cls.on : " " + cls.off) + " " + cls.effect + "\"" + ">";
+        html += ((gfs.cfg.link_enable) ? "<a href=\"" + slide.url + "\"" + relTarget + " title=\"" + gfs.cfg.link_title + "\">" + slideText + "</a>" : slideText);
         html += "<span class=\"" + cls.date + "\">&nbsp;" + gfs.slideDate(slide)  + "</span>";
         html += "<span class=\"" + cls.img_cont + "\">";
 
@@ -203,13 +208,13 @@ function GPlusFeedSilder(){
 
             //repeating event (autoscroll)
             if(gfs.cfg.slider_auto){
-                var slideDir = (gfs.cfg.slider_mode == 1) ? gfs.slideRight(gfs, slides, true) : gfs.slideLeft(gfs, slides, true);
+                var slideDir = (gfs.cfg.slider_mode == 1) ? gfs.slide(gfs, slides, true, 2) : gfs.slide(gfs, slides, true, 1);
                 setInterval(slideDir, gfs.cfg.slider_delay);
             }
 
             //button click events
-            $slider.find(sel.right).on('click', gfs.slideRight(gfs, slides, false));
-            $slider.find(sel.left).on('click', gfs.slideLeft(gfs, slides, false));
+            $slider.find(sel.right).on('click', gfs.slide(gfs, slides, false, 2));
+            $slider.find(sel.left).on('click', gfs.slide(gfs, slides, false, 1));
         };
     };
 };

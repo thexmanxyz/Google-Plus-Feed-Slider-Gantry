@@ -136,6 +136,19 @@ form:
           placeholder: Link to Google+ Post
           default: Link to Google+ Post
 
+        general.link_target:
+          type: select.select
+          label: Link Target
+          description: The target browser window when a slide link is clicked.
+          placeholder: 'Select...'
+          default: none
+          options:
+              none: None
+              _blank: Blank
+              _self: Self
+              _parent: Parent
+              _top: Top
+
         general.filter_empty:
           type: input.checkbox
           label: Filter Empty Title
