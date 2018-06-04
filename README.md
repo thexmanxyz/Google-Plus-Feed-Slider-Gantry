@@ -17,7 +17,7 @@ ___
 **Legacy Particle - Gantry <5.3.2:**
 [English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.2/gfs.particle.only.legacy.EN.v1.0.2.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.2/gfs.particle.only.legacy.DE.v1.0.2.zip)
 
-**Joomla Plugin - Gantry Global:**
+**Joomla Plugin - All Templates (Global):**
 [English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.2/gfs.j3.global.EN.v1.0.2.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.2/gfs.j3.global.DE.v1.0.2.zip)
 
 **Joomla Plugin - Hydrogen:**
