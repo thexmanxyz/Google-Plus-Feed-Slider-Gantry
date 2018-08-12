@@ -9,7 +9,7 @@ This projects implements a feed slider that fetches post data from an existing G
 * Gantry Templating Framework and Theme
 
 ## Download
-Choose the correct download for your target platform. Joomla Plugin System supported for the Gantry themes - Helium and Hydrogen. The latest Particle version is **v1.0.3**.
+Choose the correct download for your target platform. Joomla Plugin System supported for all Gantry themes globally and locally for Helium or Hydrogen. The latest Particle version is **v1.0.3**.
 ___
 **Default Particle:**
 [English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.3/gfs.particle.only.EN.v1.0.3.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.3/gfs.particle.only.DE.v1.0.3.zip)
