@@ -1,5 +1,5 @@
 # Google+ Feed Slider - Particle for Gantry
-This projects implements a feed slider that fetches post data from an existing Google+ profile.  The appearance as well as the data output can be configured via the Gantry templating framework. Moreover, **Google+ Feed Slider** supports the flexible parameterization of API requests, the custom slider styling and rendering. Furthermore, it provides an easy, user friendly and GUI assisted configuration and integration. In the current revision the following CMSs are supported:
+This projects implements a feed slider that fetches post data from an existing Google+ profile.  The appearance as well as the data output can be configured via the Gantry templating framework. Moreover, **Google+ Feed Slider** supports the flexible parameterization of API requests as well as the custom slider styling and rendering. Furthermore, it provides an easy, user friendly and GUI assisted configuration and integration. In the current revision the following CMSs are supported:
 * Joomla
 * Wordpress
 * Grav
