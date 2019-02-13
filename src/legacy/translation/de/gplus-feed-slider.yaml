@@ -1,17 +1,19 @@
-########################################################
-#                                                      #
-#   Google+ Feed Slider - Particle for Gantry          #
-#                                                      #
-#   Purpose: This project implements a basic           #
-#            feed slider that fetches data from        #
-#            an existing Google+ profile. The          #
-#            appearance as well as the data output     #
-#            can be configured via the Gantry          #
-#            templating framework.                     #
-#                                                      #
-#   Author: Andreas Kar (thex) <andreas.kar@gmx.at>    #
-#                                                      #
-########################################################
+#######################################################
+#                                                     #
+#   Google+ Feed Slider - Particle for Gantry         #
+#                                                     #
+#   Purpose: This project implements a basic          #
+#            feed slider that fetches data from       #
+#            an existing Google+ profile. The         #
+#            appearance as well as the data output    #
+#            can be configured via the Gantry         #
+#            templating framework.                    #
+#                                                     #
+#   Author: Andreas Kar (thex) <andreas.kar@gmx.at>   #
+#   Repository: https://git.io/fA9XZ                  #
+#   Homepage: https://gantryprojects.com              #
+#                                                     #
+#######################################################
 
 name: Google+ Feed Slider
 description: Renders a Google+ Feed Slider.
