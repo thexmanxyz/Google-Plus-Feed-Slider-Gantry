@@ -9,7 +9,7 @@ This projects implements a feed slider that fetches post data from an existing G
 * Gantry Templating Framework and Theme
 
 ## Download
-Choose the correct download for your target platform. Joomla Plugin System supported for all Gantry themes globally and locally for Helium or Hydrogen. The latest Particle version is **v1.0.3**.
+Choose the correct download for your target platform. The Joomla Plugin System is supported for all Gantry themes globally or locally for the templates Helium and Hydrogen. The latest Particle version is **v1.0.3**.
 ___
 **Default Particle:**
 [English](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.3/gfs.particle.only.EN.v1.0.3.zip) / [German](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/releases/download/v1.0.3/gfs.particle.only.DE.v1.0.3.zip)
@@ -37,9 +37,9 @@ ___
 ## Manual Installation
 1. Download the **Default or Legacy Package** of the *Google Plus Feed Slider Particle*. If you are using Gantry **<5.3.2** please use the **Legacy Package** for compatibility reasons.
 2. Extract the files.
-3. Copy the `.html.twig` and the `.yaml` file to your particle folder `/[GANTRY_THEME]/custom/particles`. Please check the list below to determine where the template folder for your CMS is located.
-4. Copy the `.js` file to the folder `/[GANTRY_THEME]/custom/js`. Create it if it does not exist.
-5. Copy the `.scss` file to the folder `/[GANTRY_THEME]/custom/scss`.
+3. Copy the `.html.twig` and the `.yaml` file to your particle folder `/[GANTRY_THEME]/custom/particles`. Please check the [listing](https://github.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry#cms-template-folder) below to determine where the template folder for your CMS is located.
+4. Copy the `.js` file to the folder `/[GANTRY_THEME]/custom/js`. Create the folder if it does not exist.
+5. Copy the `.scss` file to the folder `/[GANTRY_THEME]/custom/scss`. Create the folder if it does not exist.
 6. Modify the `custom.scss` file located under `/[GANTRY_THEME]/custom/scss` and add the following line `@import "gplus-feed-slider";` at the end.
 
 ## CMS Template Folder
@@ -59,6 +59,7 @@ Please be aware that the template folder path varies in dependence of the used C
 2. Switch to **Layout** and add the new appearing Particle called **Google Plus Feed Slider** either globally to your site (**base outline**), to a specific template or page by dragging it to the designated section.
 3. Get a API Key from the [Google API Console](https://console.cloud.google.com/apis/dashboard). Set your API Key within the Particle backend. 
 4. Configure the appearance according to your favor.
+5. [Optional] The download package contains the original version of the Google+ REST API JS file. You can embed it over the backend configuration if you do not want to use the default CDN. If you chose automatic installation the file is already there.
 
 **Important:** *Please be aware that the API Key can always be seen by everyone so you have to restrict the access to both your domain and products (Google+ only). Please create an explicit key for this use case and restrict it appropriately*
  
@@ -135,7 +136,9 @@ Example for a basic slider:
 ![8](/screenshots/frontend_slider.png)
 
 ## Future Tasks
-* support more API options which can be rendered to slide
+- [ ] support more API options usable for slide rendering
+- [ ] add more CSS3 slide effects
+- [ ] add more languages
 
 ## Known Issues
 None
