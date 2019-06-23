@@ -66,37 +66,37 @@ Please be aware that the template folder path varies in dependence of the used C
 **Important:** *Please be aware that the API Key can always be seen by everyone so you have to restrict the access to both your domain and products (Google+ only). Please create an explicit key for this use case and restrict it appropriately*
  
 ## Supported Parameters and Particle Options
-* Container Attributes
-* Custom CSS Classes for Container
-* Target Profile
-* Number of Posts fetched
+* Container attributes
+* Custom CSS classes for container
+* Target profile
+* Number of posts fetched
 * Slider 
-  * Auto Slide
-  * Slider Scroll Delay
-  * Slider Scroll Mode
-  * Slider Effects (about 25)
-* Post Configuration
-  * Display Name
-  * Plus One Counter
-  * Slide Number
+  * Auto slide
+  * Slider scroll delay
+  * Slider scroll mode
+  * Slider effects (about 25)
+* Post configuration
+  * Display name
+  * +1 counter
+  * Slide number
 * Image configuration
-  * Image Size
-  * Image Design (Square, Rounded)
-  * Image Alt Text
-* Date Configuration (Format, Mode, Delimiters)  
-* Button Configuration
-  * Different Designs
-  * Arrangement Modes
-* Link to Original Post
-* Link Title
-  * Link back to Original Post
+  * Image size
+  * Image design (square, rounded)
+  * Image alt text
+* Date configuration (format, mode, delimiters)  
+* Button configuration
+  * Different designs
+  * Arrangement modes
+* Link to original post
+* Link title
+  * Link back to original post
   * Target Configuration
-* Filtering of Posts with empty Titles
-* Loading Text while fetching Data
-* JS Priority and Placement (head or footer)
-* JS Loading
+* Filtering of posts with empty titles
+* Loading text while fetching data
+* JS priority and placement (head or footer)
+* JS loading
   * Remote, Local and Default
-* JS Execution
+* JS execution
   * Asynchronous
   * Deferred
 
