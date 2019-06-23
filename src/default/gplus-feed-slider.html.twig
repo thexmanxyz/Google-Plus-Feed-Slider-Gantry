@@ -77,7 +77,7 @@
 {% set jsExecAttr = _self.getJSExecution(jsExec) %}
 {% set jsPrior = particle.js.priority|default(0) %}
 
-{% set cdnRepo = 'https://cdn.rawgit.com/thexmanxyz/Google-Plus-Feed-Slider-Gantry/1930f1c0/src/js' %}
+{% set cdnRepo = particle.cdn.base_url|default('https://cdn.jsdelivr.net/gh/thexmanxyz/Google-Plus-Feed-Slider-Gantry/src/js') %}
 {% set jsPath = _self.getResourceFilePath(particle.js, cdnRepo, 'gplus-feed-slider', 'js') %}
 
 {%- block particle -%}

@@ -304,6 +304,13 @@ form:
         tab_js:
             label: JS
             fields:
+                cdn.base_url:
+                  type: input.text
+                  label: CDN Base URL
+                  description: The base URL for the CDN server.
+                  placeholder: https://cdn.jsdelivr.net/gh/thexmanxyz/Google-Plus-Feed-Slider-Gantry/src/js
+                  default: https://cdn.jsdelivr.net/gh/thexmanxyz/Google-Plus-Feed-Slider-Gantry/src/js
+
                 js.placement:
                   type: select.select
                   label: JS Placement
