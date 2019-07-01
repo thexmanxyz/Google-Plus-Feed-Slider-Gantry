@@ -92,7 +92,7 @@ form:
             label: Slider
             fields:
                 general.slider.auto:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Auto Slide
                   description: Define whether the slider should automatically rotate through the posts.
                   default: true
@@ -165,7 +165,7 @@ form:
             label: Text
             fields:
                 general.link_enable:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Enable Link
                   description: Define whether the title link should be displayed or not.
                   default: true
@@ -191,7 +191,7 @@ form:
                       _top: Top
 
                 general.filter_empty:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Filter Empty Title
                   description: Define whether to display posts with an empty title or not.
                   default: true
@@ -214,19 +214,19 @@ form:
             label: Post
             fields:
                 general.post.display_name:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Enable Display Name
                   description: Defines whether the users name will be displayed.
                   default: false
 
                 general.post.plus_one:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Enable Plus Ones
                   description: Defines whether the +1 counter will be displayed.
                   default: true
 
                 general.post.slide_count:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Enable Slide Count
                   description: Defines whether the current slide count will be shown in front of the title text.
                   default: false
@@ -235,7 +235,7 @@ form:
             label: Image
             fields:
                 general.image.enable:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Enable Profile Image
                   description: Set this checkbox to show the profile image together with the post title.
                   default: true

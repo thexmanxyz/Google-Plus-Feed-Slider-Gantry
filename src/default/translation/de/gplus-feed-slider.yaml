@@ -92,7 +92,7 @@ form:
             label: Slider
             fields:
                 general.slider.auto:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Auto Slide
                   description: Legt fest, ob der Slider automatisch durch die Beiträge iterieren soll.
                   default: true
@@ -165,7 +165,7 @@ form:
             label: Text
             fields:
                 general.link_enable:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Aktiviere Link
                   description: Legt fest, ob der Titel Link angezeigt werden soll oder nicht.
                   default: true
@@ -191,7 +191,7 @@ form:
                       _top: Top
 
                 general.filter_empty:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Leere Title filtern
                   description: Legt fest, ob Beiträge mit leerem Titel angezeigt werden oder nicht.
                   default: true
@@ -214,19 +214,19 @@ form:
             label: Beitrag
             fields:
                 general.post.display_name:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Aktiviere Anzeigename
                   description: Legt fest, ob der Name des Benutzers angezeigt werden soll.
                   default: false
 
                 general.post.plus_one:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Aktiviere Plus Ones
                   description: Legt fest, ob der +1 Zähler angezeigt werden soll.
                   default: true
 
                 general.post.slide_count:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Aktiviere Slidenummer
                   description: Legt fest, ob die Slidenummer vor dem eigentlich Titel Text angezeigt werden soll.
                   default: false
@@ -235,7 +235,7 @@ form:
             label: Bild
             fields:
                 general.image.enable:
-                  type: input.checkbox
+                  type: enable.enable
                   label: Aktiviere Profilbild
                   description: Setzen Sie diese Checkbox, um ein Profilbild neben dem Beitrag anzuzeigen.
                   default: true
